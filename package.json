@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm install -D jestnpm install -D jest"
+    "test": "jest --watchAll --collect-coverage",
+    "sass": "sass src/styles.scss public/app/css/styles.css"
   },
   "babel": {
     "env": {
@@ -29,5 +30,8 @@
   },
   "jest": {
     "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "sass": "^1.43.2"
   }
 }
