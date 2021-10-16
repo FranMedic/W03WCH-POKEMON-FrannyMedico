@@ -31,10 +31,14 @@ class Page extends Component {
               
             </ul>
           </div>
+          <div class="buttons"></div>
           <button class="button button__next">Prev</button>
          <button class="button button__previous">Next</button>
         </div>`;
     this.element.innerHTML = html;
+    const buttonParent = document.querySelector("div.container");
+    new Button(buttonParent, "button", "", "Prev", before);
+    new Button(buttonParent, "button", "", "Next", next);
   }
 }
 
