@@ -21,7 +21,7 @@ class Page extends Component {
         </div>`;
     this.element.innerHTML = html;
     const ulTag = this.element.querySelector("ul.list-unstyled");
-    console.log(ulTag);
+
     const createCard = new PokemonCard(ulTag);
   }
 }

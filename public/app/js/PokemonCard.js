@@ -1,5 +1,4 @@
 import Component from "./Component.js";
-import Page from "./Page.js";
 
 class PokemonCard extends Component {
   constructor(parentElement) {
