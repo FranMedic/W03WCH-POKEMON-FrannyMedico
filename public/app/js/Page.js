@@ -1,25 +1,41 @@
 import Component from "./Component.js";
 import PokemonCard from "./PokemonCard.js";
 import PokemonServices from "./PokemonServices.js";
+import PageButton from "./Button.js";
 
 class Page extends Component {
   urlAPI;
   pokemonsList;
+  page = 0;
+  urlPage;
+
   constructor(parentElement, url) {
     super(parentElement, "app", "div");
     this.urlAPI = url;
-    this.generateHTML();
-
-    (async () => {
-      const pokemonInstance = new PokemonServices(this.urlAPI);
-      const responsePokemons = await pokemonInstance.getResponse();
-      this.pokemonsList = responsePokemons.results;
-      const ulTag = this.element.querySelector("ul.list-unstyled");
-      this.pokemonsList.map((pokemon) => new PokemonCard(ulTag, pokemon.url));
-    })();
+    this.urlPage = url;
+    this.goToAnotherPage();
+    this.generateHTML(this.urlPage);
   }
+  goToAnotherPage = () => {
+    const offset = this.page * 9;
+    const urlToGoAnotherPage = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=9`;
+    this.urlPage = urlToGoAnotherPage;
+  };
 
-  generateHTML() {
+  previousPage = () => {
+    if (this.page > 0) {
+      this.page--;
+      this.goToAnotherPage();
+      this.generateHTML(this.urlPage);
+    }
+  };
+  nextPage = () => {
+    this.page++;
+    this.goToAnotherPage();
+    this.generateHTML(this.urlPage);
+  };
+
+  generateHTML(urlPages) {
     const html = ` <header class="main-header">
           <button class="dashboard"><img src="" /></button>
           <h1 class="main-header__title">PokyMón</h1>
@@ -32,13 +48,22 @@ class Page extends Component {
             </ul>
           </div>
           <div class="buttons"></div>
-          <button class="button button__next">Prev</button>
-         <button class="button button__previous">Next</button>
         </div>`;
     this.element.innerHTML = html;
+
+    (async () => {
+      const pokemonInstance = new PokemonServices(urlPages);
+      const responsePokemons = await pokemonInstance.getResponse();
+      this.pokemonsList = responsePokemons.results;
+      const ulTag = this.element.querySelector("ul.list-unstyled");
+      this.pokemonsList.map((pokemon) => new PokemonCard(ulTag, pokemon.url));
+    })();
+
     const buttonParent = document.querySelector("div.container");
-    new Button(buttonParent, "button", "", "Prev", before);
-    new Button(buttonParent, "button", "", "Next", next);
+    // eslint-disable-next-line no-new
+    new PageButton(buttonParent, "button__previous", "<", this.previousPage);
+    // eslint-disable-next-line no-new
+    new PageButton(buttonParent, "button__next", ">", this.nextPage);
   }
 }
 
