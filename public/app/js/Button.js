@@ -1,20 +1,21 @@
 import Component from "./Component.js";
 
-class Button extends Component {
+class PageButton extends Component {
   text;
-  action;
+  actionOnClick;
 
-  constructor(parentElement, className, tag = "button", text, actionOnClick) {
-    super(parentElement, className, tag);
+  constructor(parentElement, className, text, actionOnClick) {
+    super(parentElement, className, "button");
     this.actionOnClick = actionOnClick;
+    this.text = text;
+
     this.element.textContent = this.text;
-    this.event();
+    this.events();
   }
 
-  event() {
-    this.element.addEventListener("click", this.action);
-  }
-  generateHTML() {
-    this.element.textContent = this.text;
+  events() {
+    this.element.addEventListener("click", this.actionOnClick);
   }
 }
+
+export default PageButton;
