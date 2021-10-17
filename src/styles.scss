@@ -101,3 +101,13 @@ main {
   width: 100px;
   padding-top: 10px;
 }
+.fa-star {
+  content: "\f005";
+  color: gold;
+  position: absolute;
+  left: 30px;
+  top: 10px;
+}
+.far:hover {
+  font-weight: 600;
+}

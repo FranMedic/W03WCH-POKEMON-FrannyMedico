@@ -1,6 +1,6 @@
 class PokemonServices {
   urlAPI;
-  myApi = "https://pokedex-franny.herokuapp.com/pokemon";
+  myApiPokemon = "https://pokedex-franny.herokuapp.com/pokemon";
   constructor(url) {
     this.urlAPI = url;
   }
@@ -10,7 +10,7 @@ class PokemonServices {
     return pokemonLista;
   }
   async createData(idPokemon) {
-    await fetch(this.apiPokemon, {
+    await fetch(this.myApiPokemon, {
       method: "POST",
       body: JSON.stringify(idPokemon), // este id pokemon tiene que se un objeto del cual guardamos como propiedad y conetnido lo que quiera guaradar
       headers: {

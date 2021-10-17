@@ -60,10 +60,21 @@ class PokemonCard extends Component {
                 <span class="list-pokemon__type">${this.type2}</span>
                 </div>
                 <div class="divimagen">
-                <i class="list-pokemon__icon-favorito"></i>
+                <i class="list-pokemon__icon-favorito far fa-star"></i>
                 <img class="list-pokemon__image" src="${this.img}" alt="foto de ejemplo" />
                </div>`;
     this.element.innerHTML = html;
+
+    const favoritePokemon = this.element.querySelector(".far fa-star");
+    favoritePokemon.addEventListener("click", () => {
+      (async () => {
+        const pokemonData = {
+          idPokemon: `${this.number}`,
+          namePokemon: `${this.name}`,
+        };
+        await this.response.createData(pokemonData);
+      })();
+    });
   }
 }
 export default PokemonCard;
