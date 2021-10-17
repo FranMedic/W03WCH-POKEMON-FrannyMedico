@@ -10,10 +10,10 @@ class PageButton extends Component {
     this.text = text;
 
     this.element.textContent = this.text;
-    this.events();
+    this.event();
   }
 
-  events() {
+  event() {
     this.element.addEventListener("click", this.actionOnClick);
   }
 }
