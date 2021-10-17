@@ -65,9 +65,7 @@ class PokemonCard extends Component {
                </div>`;
     this.element.innerHTML = html;
 
-    const favoritePokemon = this.element.querySelector(
-      ".list-pokemon__icon-favorito far fa-star"
-    );
+    const favoritePokemon = this.element.querySelector(".far fa-star");
     favoritePokemon.addEventListener("click", () => {
       (async () => {
         const pokemonData = {
