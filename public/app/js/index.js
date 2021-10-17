@@ -1,5 +1,4 @@
 import Page from "./Page.js";
-import PokemonServices from "./PokemonServices.js";
 
 const mainHtmlTag = document.querySelector("main");
 
