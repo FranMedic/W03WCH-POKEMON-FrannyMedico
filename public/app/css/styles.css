@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  background-color: #132f61;
+  height: 100vh;
+}
+
+.app {
+  margin: 0 auto;
+  background-color: #132f61;
+}
+
+.main-header {
+  background-color: #132f61;
+  display: flex;
+  justify-content: space-around;
+  height: 150px;
+}
+.main-header__title img {
+  max-width: 500px;
+}
+
+.container {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #132f61;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  width: 88%;
+}
+
+.list-unstyled {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.list-unstyled .list-pokemon {
+  width: 350px;
+  height: 150px;
+  font-size: 18px;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-right: 60px;
+  display: flex;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.list-unstyled .list-pokemon__info {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.list-unstyled .divimagen {
+  width: 5px;
+}
+.list-unstyled .divimagen .list-pokemon__image {
+  max-width: 250px;
+  max-height: 210px;
+  position: relative;
+  top: -20px;
+  left: 10px;
+  z-index: 1;
+}
+
+.button__previous {
+  position: absolute;
+  left: 30px;
+  top: 600px;
+  font-size: 8em;
+  background: #132f61;
+  color: #fff;
+  border: none;
+}
+.button__previous__off {
+  display: none;
+}
+
+.button__next {
+  position: absolute;
+  right: 30px;
+  top: 600px;
+  font-size: 8em;
+  background: #132f61;
+  color: #fff;
+  border: none;
+}
+.button__next__off {
+  display: none;
+}
+
+.button-pokedex {
+  padding-top: 20px;
+}
+
+.dashboard {
+  width: 100px;
+  padding-top: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */
