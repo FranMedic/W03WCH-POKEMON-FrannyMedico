@@ -37,9 +37,9 @@ class Page extends Component {
 
   generateHTML(urlPages) {
     const html = ` <header class="main-header">
-          <button class="dashboard"><img src="" /></button>
-          <h1 class="main-header__title">PokyMón</h1>
-          <button class="button pokedex">My Pokydéx</button>
+          <a href="index.html" class="dashboard"><img src="images/pokeball-icon.png" alt="Inicio" ></a>
+          <h1 class="main-header__title"><img src="images/logo-pokemon.png" alt="logopokemon"/></h1>
+          <img src ="images/pokedexicon.png" alt="My Pokemons" class="button-pokedex"/>
         </header>
         <div class="container">
           <div class="list">

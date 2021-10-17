@@ -9,7 +9,6 @@ describe("When given a Component constructor", () => {
 
       const callToFunction = new Component(parentElement, className, tag);
       const functionAnswer = parentElement.querySelector("p.class");
-      console.log(functionAnswer);
 
       expect(functionAnswer).not.toBeNull();
     });

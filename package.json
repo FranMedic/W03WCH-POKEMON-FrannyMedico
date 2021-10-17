@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll --collect-coverage",
-    "sass": "sass src/styles.scss public/app/css/styles.css"
+    "sass": "sass src/styles.scss public/app/css/styles.css",
+    "sass-dev": "sass src/styles.scss public/app/css/styles.css --watch"
   },
   "babel": {
     "env": {
