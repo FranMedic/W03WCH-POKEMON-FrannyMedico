@@ -38,7 +38,7 @@ main {
 .list {
   display: flex;
   justify-content: center;
-  width: 99%;
+  width: 90%;
 }
 
 .list-unstyled {
@@ -81,7 +81,7 @@ main {
   left: 30px;
   top: 600px;
   font-size: 8em;
-  background: #132f61;
+  background: transparent;
   color: #fff;
   border: none;
 }
@@ -94,7 +94,7 @@ main {
   right: 30px;
   top: 600px;
   font-size: 8em;
-  background: #132f61;
+  background: transparent;
   color: #fff;
   border: none;
 }
